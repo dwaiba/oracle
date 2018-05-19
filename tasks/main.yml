@@ -1,0 +1,43 @@
+- name: "Create Volume Directory: {{ oracle_docker_localvol }}"
+  shell: >
+    mkdir -p {{ oracle_docker_localvol }} && chown -R 54321:54321 {{ oracle_docker_localvol }}
+  become_user: "root"
+  become: yes
+
+- name: "Build image: {{ oracle_version }}"
+  shell: >
+   git clone {{ oracle_git_repo }} {{ oracle_git_clone_dir }}/docker-images && mv {{ oracle_binary_loc }} {{ oracle_git_clone_dir }}/docker-images/OracleDatabase/SingleInstance/dockerfiles/{{ oracle_version }}/ && cd {{ oracle_git_clone_dir }}/docker-images/OracleDatabase/SingleInstance/dockerfiles/ &&  ./buildDockerImage.sh -v {{ oracle_version }} -e
+
+- name: "Create db instance: {{ oracle_version }}"
+  shell: >
+    docker run -dti --name={{ oracle_container_name }} --restart=always \
+    -p {{ oracle_oem_port }}:{{ oracle_oem_port }} -p {{ oracle_listener_port }}:{{ oracle_listener_port }} \
+    -e ORACLE_SID={{ oracle_sid_name }} \
+    -e ORACLE_PDB={{ oracle_pdb_name }} \
+    -e ORACLE_PWD={{ oracle_sys_password }} \
+    -e ORACLE_CHARACTERSET={{ oracle_characterset }} \
+    -v {{ oracle_docker_localvol }}:/opt/oracle/oradata \
+    oracle/database:{{ oracle_image_name }}
+
+# --storage-opt is supported only for overlay over xfs with 'pquota' mount option.
+#
+#- name: "Create db instance: {{ oracle_version }}"
+#  shell: >
+#    docker run -dti --name={{ oracle_container_name }} --restart=always --storage-opt size=20G \
+#    -p {{ oracle_oem_port }}:{{ oracle_oem_port }} -p {{ oracle_listener_port }}:{{ oracle_listener_port }} \
+#    -e ORACLE_SID={{ oracle_sid_name }} \
+#    -e ORACLE_PDB={{ oracle_pdb_name }} \
+#    -e ORACLE_PWD={{ oracle_sys_password }} \
+#    -e ORACLE_CHARACTERSET={{ oracle_characterset }} \
+#    -v {{ oracle_docker_localvol }}:/opt/oracle/oradata \
+#    oracle/database:{{ oracle_image_name }}
+
+- name: sleep for a specified interval
+  command: sleep 720
+
+- name: "Create pega schema on {{ oracle_version }}"
+  shell: >
+    docker cp {{ oracle_pega_dbscriptloc }} {{ oracle_container_name }}:/home/oracle && docker exec  {{ oracle_container_name }} bash -c "sqlplus sys/{{ oracle_sys_password }}@//localhost:{{ oracle_listener_port }}/{{ oracle_sid_name }} as sysdba @{{ oracle_pega_dbscript }} {{ oracle_pega_db_schema_pass }} {{ oracle_pega_db_tbs }} {{ oracle_pega_db_ttbs }} {{ oracle_sys_password }} {{ oracle_pega_db_schema_owner }}"
+
+- name: sleep for a specified interval
+  command: sleep 60
