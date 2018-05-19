@@ -1,0 +1,27 @@
+- hosts: all
+  vars:
+
+    name: Oracle setup
+    oracle_git_clone_dir : "/data"
+    oracle_git_repo : "https://github.com/oracle/docker-images"
+    oracle_version : "12.2.0.1"
+    oracle_image_name : "12.2.0.1-ee"
+    oracle_binary_loc : "/data/binaries/linuxx64_12201_database.zip"
+    oracle_container_name : "oracle-ee"
+    oracle_sid_name : "ORCLCDB"
+    oracle_pdb_name : "ORCLPDB1"
+    oracle_sys_password : "bangboom23D#"
+    oracle_characterset : "AL32UTF8"
+    oracle_listener_port : "1521"
+    oracle_oem_port : "5500"
+    oracle_docker_localvol : "/data/oradata"
+    oracle_pega_dbscriptloc : "util_scripts/pega_main.sql"
+    oracle_pega_dbscript : "pega_main.sql"
+    oracle_pega_db_tbs : "DEMO"
+    oracle_pega_db_ttbs : "TEMP"
+    oracle_pega_db_schema_owner : "pega"
+    oracle_pega_db_schema_pass : "pega"
+    
+  roles:
+    - role: oracle 
+
