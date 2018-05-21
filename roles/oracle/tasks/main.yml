@@ -35,9 +35,9 @@
 - name: sleep for a specified interval
   command: sleep 720
 
-- name: "Create pega schema on {{ oracle_version }}"
+- name: "Create  schema on {{ oracle_version }}"
   shell: >
-    docker cp {{ oracle_pega_dbscriptloc }} {{ oracle_container_name }}:/home/oracle && docker exec  {{ oracle_container_name }} bash -c "sqlplus sys/{{ oracle_sys_password }}@//localhost:{{ oracle_listener_port }}/{{ oracle_sid_name }} as sysdba @{{ oracle_pega_dbscript }} {{ oracle_pega_db_schema_pass }} {{ oracle_pega_db_tbs }} {{ oracle_pega_db_ttbs }} {{ oracle_sys_password }} {{ oracle_pega_db_schema_owner }}"
+    docker cp {{ oracle_dbscriptloc }} {{ oracle_container_name }}:/home/oracle && docker exec  {{ oracle_container_name }} bash -c "sqlplus sys/{{ oracle_sys_password }}@//localhost:{{ oracle_listener_port }}/{{ oracle_sid_name }} as sysdba @{{ oracle_dbscript }} {{ oracle_db_schema_pass }} {{ oracle_db_tbs }} {{ oracle_db_ttbs }} {{ oracle_sys_password }} {{ oracle_db_schema_owner }}"
 
 - name: sleep for a specified interval
   command: sleep 60
