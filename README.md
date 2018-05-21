@@ -10,6 +10,7 @@ wget --load-cookies=./cookies.txt --no-check-certificate "http://download.oracle
 ### Run the playbook in the infra 
 
 `
+
 cd /data
 
 git clone https://github.com/dwaiba/oracle
