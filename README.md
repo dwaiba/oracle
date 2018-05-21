@@ -7,7 +7,12 @@ wget --load-cookies=./cookies.txt --no-check-certificate "http://download.oracle
 `
 ## [Get Some Infra - GCP](https://gist.github.com/dwaiba/c977a1440855d296b6e508b570915a10#file-gcloud-centos7-docker-tools-L64-L120)
 
+### Run the playbook in the infra 
 `
-ansible-playbook -i inventory oracle.yml
+git clone https://github.com/dwaiba/oracle
+
+cd oracle
+
+nohup ansible-playbook -i inventory oracle.yml &
 `
 
