@@ -11,16 +11,17 @@ wget --load-cookies=./cookies.txt --no-check-certificate "http://download.oracle
 
 `
 cd /data
-
 `
+
 `
 git clone https://github.com/dwaiba/oracle
 `
+
 `
 cd oracle
 `
+
 `
 nohup ansible-playbook -i inventory oracle.yml &
-
 `
 
