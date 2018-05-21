@@ -15,12 +15,12 @@
     oracle_listener_port : "1521"
     oracle_oem_port : "5500"
     oracle_docker_localvol : "/data/oradata"
-    oracle_pega_dbscriptloc : "util_scripts/pega_main.sql"
-    oracle_pega_dbscript : "pega_main.sql"
-    oracle_pega_db_tbs : "DEMO"
-    oracle_pega_db_ttbs : "TEMP"
-    oracle_pega_db_schema_owner : "pega"
-    oracle_pega_db_schema_pass : "pega"
+    oracle_dbscriptloc : "util_scripts/schema_main.sql"
+    oracle_dbscript : "pega_main.sql"
+    oracle_db_tbs : "DEMO"
+    oracle_db_ttbs : "TEMP"
+    oracle_db_schema_owner : "pega"
+    oracle_db_schema_pass : "pega"
     
   roles:
     - role: oracle 
