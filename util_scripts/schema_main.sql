@@ -6,10 +6,10 @@ PROMPT
 PROMPT specify password for username as parameter 1:
 DEFINE pass     = &1
 PROMPT 
-PROMPT specify default tablespace for pega as parameter 2:
+PROMPT specify default tablespace as parameter 2:
 DEFINE tbs      = &2
 PROMPT 
-PROMPT specify temporary tablespace for pega as parameter 3:
+PROMPT specify temporary tablespace as parameter 3:
 DEFINE ttbs     = &3
 PROMPT 
 PROMPT specify password for SYS as parameter 4:
@@ -26,7 +26,7 @@ DEFINE user_name     = &5
 -- The first dot in the spool command below is 
 -- the SQL*Plus concatenation character
 
-REM DEFINE spool_file = &log_path.pega_main.log
+REM DEFINE spool_file = &log_path.schema_main.log
 REM SPOOL &spool_file
 SPOOL
 
@@ -61,7 +61,7 @@ REM CONNECT sys/&pass_sys@&connect_string AS SYSDBA;
 GRANT execute ON sys.dbms_stats TO &user_name;
 
 REM =======================================================
-REM create pega schema objects
+REM create schema objects
 REM =======================================================
 
 REM CONNECT &user_name/&pass@&connect_string
@@ -95,7 +95,7 @@ GRANT SELECT_CATALOG_ROLE TO &user_name;
 -- create tables, sequences and constraint
 --
 
-REM @__SUB__CWD__/pega/pega_wotever
+REM @__SUB__CWD__/another_wotever
 
 -- 
 -- populate tables
