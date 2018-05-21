@@ -10,17 +10,17 @@
     oracle_container_name : "oracle-ee"
     oracle_sid_name : "ORCLCDB"
     oracle_pdb_name : "ORCLPDB1"
-    oracle_sys_password : "bangboom23D#"
+    oracle_sys_password : "rollapolla23D#"
     oracle_characterset : "AL32UTF8"
     oracle_listener_port : "1521"
     oracle_oem_port : "5500"
     oracle_docker_localvol : "/data/oradata"
     oracle_dbscriptloc : "util_scripts/schema_main.sql"
-    oracle_dbscript : "pega_main.sql"
+    oracle_dbscript : "schema_main.sql"
     oracle_db_tbs : "DEMO"
     oracle_db_ttbs : "TEMP"
-    oracle_db_schema_owner : "pega"
-    oracle_db_schema_pass : "pega"
+    oracle_db_schema_owner : "schema_owner"
+    oracle_db_schema_pass : "schema_owner"
     
   roles:
     - role: oracle 
