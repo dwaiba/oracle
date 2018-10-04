@@ -26,3 +26,7 @@ cd oracle
 nohup ansible-playbook -i inventory oracle.yml &
 `
 
+### Connect
+`docker exec -ti oracle-ee bash -c "sqlplus sys/rollapolla23D#@localhost:1521/orclcdb as sysdba"`
+
+`docker exec -ti oracle-ee bash -c "sqlplus schema_owner/schema_owner@localhost:1521/orclcdb"`
