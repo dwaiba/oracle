@@ -1,3 +1,13 @@
+- name: "Copy the cookies file" 
+  copy:
+    src: {{ oracle_cookie_put_dir }}/cookies.txt
+    dest: {{ oracle_cookie_load_dir }}/cookies.txt
+    owner: root
+    mode: 0640
+
+- name: "Obtain Oracle zip with local cookies.txt variable in oracle.yml"
+  shell: >
+    wget --load-cookies={{ cookie_load_file }}  --no-check-certificate "http://download.oracle.com/otn/linux/oracle12c/122010/linuxx64_12201_database.zip" -O {{ oracle_binary_loc }}
 - name: "Create Volume Directory: {{ oracle_docker_localvol }}"
   shell: >
     mkdir -p {{ oracle_docker_localvol }} && chown -R 54321:54321 {{ oracle_docker_localvol }}
