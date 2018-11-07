@@ -1,11 +1,23 @@
-# Oracle Ansible Role
+Table of Contents (Oracle Ansible Role)
+=================
+
+[Oracle Dockerized on persistent volume and tools automations ](#Oracle-dockerized-on-persistent-volume-and-tools-automations)
+  * [Get some Cloud Infra with LVM - Automated along with ansible latest. RHEL75 or CentOS7](#get-some-cloud-infra-with-lvm---automated-along-with-ansible-latest--rhel75-or-centos7)
+   * [Get Some Infra - GCP](#get-some-infra---gcp)
+   * [Get Some Infra - AWS](#get-some-infra---aws)
+  * [Steps to run the playbook in the infra](#steps-to-run-the-playbook-in-the-infra)
+[Reporting bugs](#reporting-bugs)
+[Patches and pull requests](#patches-and-pull-requests)
+[License](#license)
+[Code of conduct](#code-of-conduct)
+
 ### Oracle Dockerized on persistent volume and tools automations
 
-#### Get some Cloud Infra with LVM - Automated along with ansible latest. RHEL75 or CentOS7
+#### Get some Cloud Infra with LVM - Automated along with ansible latest- RHEL75 or CentOS7
 ##### [Get Some Infra - GCP](https://github.com/dwaiba/gcp-terraform)
 ##### [Get Some Infra - AWS](https://github.com/dwaiba/aws-terraform)
 
-##### Steps to run the playbook in the infra 
+#### Steps to run the playbook in the infra 
 
 `
 cd /data
@@ -32,3 +44,22 @@ nohup sudo ansible-playbook -i inventory oracle.yml &
 `docker exec -ti oracle-ee bash -c "sqlplus sys/rollapolla23D#@localhost:1521/orclcdb as sysdba"`
 
 `docker exec -ti oracle-ee bash -c "sqlplus schema_owner/schema_owner@localhost:1521/orclcdb"`
+
+OR
+
+**As sql client directly to VM over ports `1521`**
+
+### Reporting bugs
+
+Please report bugs  by opening an issue in the [GitHub Issue Tracker](https://github.com/dwaiba/oracle/issues).
+Bugs have auto template defined. Please view it [here](https://github.com/dwaiba/oracle/blob/master/.github/ISSUE_TEMPLATE/bug_report.md)
+
+### Patches and pull requests
+
+Patches can be submitted as GitHub pull requests. If using GitHub please make sure your branch applies to the current master as a 'fast forward' merge (i.e. without creating a merge commit). Use the `git rebase` command to update your branch to the current master if necessary.
+
+### License
+  * Please see the [LICENSE file](https://github.com/dwaiba/oracle/blob/master/LICENSE) for licensing information.
+
+### Code of Conduct
+  * Please see the [Code of Conduct](https://github.com/dwaiba/oracle/blob/master/CODE_OF_CONDUCT.md)
