@@ -1,15 +1,15 @@
 Table of Contents (Oracle Ansible Role)
 =================
 
-[Oracle Dockerized on persistent volume and tools automations ](#Oracle-dockerized-on-persistent-volume-and-tools-automations)
+* [Oracle Dockerized on persistent volume and tools automations ](#Oracle-dockerized-on-persistent-volume-and-tools-automations)
   * [Get some Cloud Infra with LVM - Automated along with ansible latest. RHEL75 or CentOS7](#get-some-cloud-infra-with-lvm---automated-along-with-ansible-latest--rhel75-or-centos7)
    * [Get Some Infra - GCP](#get-some-infra---gcp)
    * [Get Some Infra - AWS](#get-some-infra---aws)
   * [Steps to run the playbook in the infra](#steps-to-run-the-playbook-in-the-infra)
-[Reporting bugs](#reporting-bugs)
-[Patches and pull requests](#patches-and-pull-requests)
-[License](#license)
-[Code of conduct](#code-of-conduct)
+* [Reporting bugs](#reporting-bugs)
+* [Patches and pull requests](#patches-and-pull-requests)
+* [License](#license)
+* [Code of conduct](#code-of-conduct)
 
 ### Oracle Dockerized on persistent volume and tools automations
 
