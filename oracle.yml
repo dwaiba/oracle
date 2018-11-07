@@ -2,9 +2,8 @@
   vars:
 
     name: Oracle setup
-    oracle_cookie_put_dir : "roles/oracle/files"
-    oracle_cookie_load_dir : "roles/oracle/tasks"
-    cookie_load_file : "{{ oracle_cookie_load_dir }}/./cookies.txt"
+    oracle_cookie_put_dir : "roles/oracle/files/"
+    oracle_cookie_load_dir : "roles/oracle/tasks/"
     oracle_git_clone_dir : "/data/"
     oracle_git_repo : "https://github.com/oracle/docker-images"
     oracle_version : "12.2.0.1"
