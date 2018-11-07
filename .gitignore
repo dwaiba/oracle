@@ -3,4 +3,5 @@
 *.retry
 /roles/oracle/files/cookies.txt
 /roles/oracle/tasks/cookies.txt
+[0-9]*
 
