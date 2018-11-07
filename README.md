@@ -1,10 +1,6 @@
-# Oracle Ansible Role
-## Oracle Dockerized
- oracle.com cookies.txt is required valid for 30 minutes
- 
-`
-wget --load-cookies=./cookies.txt --no-check-certificate "http://download.oracle.com/otn/linux/oracle12c/122010/linuxx64_12201_database.zip" -O linuxx64_12201_database.zip
-`
+# Oracle Ansible Role via Oracle Dockerized on persistent volume with image built from src
+
+# Get some Cloud Infra with LVM - Automated 
 ### [Get Some Infra - GCP](https://github.com/dwaiba/gcp-terraform)
 ### [Get Some Infra - AWS](https://github.com/dwaiba/aws-terraform)
 
@@ -22,8 +18,14 @@ git clone https://github.com/dwaiba/oracle
 cd oracle
 `
 
+
+cookies.txt is required valid for 30 minutes
+
+Obtain cookie post loggin in at `https://login.oracle.com/mysso/signon.jsp` from browser via any [cookies.txt Chrome Plugin](https://chrome.google.com/webstore/search/cookies.txt) post download page license acceptance **[ here ](https://www.oracle.com/technetwork/database/enterprise-edition/downloads/oracle12c-linux-12201-3608234.html)** and put cookie content in `{{ oracle_cookie_put_dir }}` variable mentioned directory as declared in `oracle.yml` playbook.
+ 
+
 `
-nohup ansible-playbook -i inventory oracle.yml &
+**nohup sudo ansible-playbook -i inventory oracle.yml &**
 `
 
 ### Connect
