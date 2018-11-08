@@ -14,8 +14,8 @@ Table of Contents (Oracle Ansible Role)
 ### Oracle Dockerized on persistent volume and tools automations
 
 #### Get some Cloud Infra with LVM - Automated along with ansible latest- RHEL75 or CentOS7
-##### [Get Some Infra - GCP](https://github.com/dwaiba/gcp-terraform)
-##### [Get Some Infra - AWS](https://github.com/dwaiba/aws-terraform)
+##### [Get Some Infra - GCP](https://github.com/dwaiba/gcp-terraform#table-of-contents-google-cloud-with-terraform-with-disks)
+##### [Get Some Infra - AWS](https://github.com/dwaiba/aws-terraform#table-of-contents-aws-rhel75centos7-with-disks-farm-with-terraform-in-any-region)
 
 #### Steps to run the playbook in the infra 
 
