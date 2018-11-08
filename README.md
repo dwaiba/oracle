@@ -14,8 +14,8 @@ Table of Contents (Oracle Ansible Role)
 ### Oracle Dockerized on persistent volume and tools automations
 
 #### Get some Cloud Infra with LVM - Automated along with ansible latest- RHEL75 or CentOS7
-##### [Get Some Infra - GCP](https://github.com/dwaiba/gcp-terraform#table-of-contents-google-cloud-with-terraform-with-disks)
-##### [Get Some Infra - AWS](https://github.com/dwaiba/aws-terraform#table-of-contents-aws-rhel75centos7-with-disks-farm-with-terraform-in-any-region)
+##### :beginner: [Get Some Infra - GCP](https://github.com/dwaiba/gcp-terraform#table-of-contents-google-cloud-with-terraform-with-disks)
+##### :beginner: [Get Some Infra - AWS](https://github.com/dwaiba/aws-terraform#table-of-contents-aws-rhel75centos7-with-disks-farm-with-terraform-in-any-region)
 
 #### Steps to run the playbook in the infra 
 
@@ -31,9 +31,7 @@ git clone https://github.com/dwaiba/oracle
 cd oracle
 `
 
-:round_pushpin:
-
-> **cookies.txt is required valid for 30 minutes**
+> :round_pushpin: **cookies.txt is required valid for 30 minutes**
 
 > 1. **Obtain cookies content** post log in [here](http://www.oracle.com/webapps/redirect/signon?nexturl=https://www.oracle.com/downloads/index.html#usermenu) `http://www.oracle.com/webapps/redirect/signon?nexturl=https://www.oracle.com/downloads/index.html#usermenu`.
 > 2. The above should be done from browser via any [cookies.txt Chrome Plugin](https://chrome.google.com/webstore/search/cookies.txt) post download page license acceptance **[ here](https://www.oracle.com/technetwork/database/enterprise-edition/downloads/oracle12c-linux-12201-3608234.html)** . Please cancel local browser download of `linuxx64_12201_database.zip` post cookie collection.
