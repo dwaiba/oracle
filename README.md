@@ -35,7 +35,7 @@ cd oracle
 > **cookies.txt is required valid for 30 minutes**
 
 > 1. **Obtain cookies content** post log in [here](http://www.oracle.com/webapps/redirect/signon?nexturl=https://www.oracle.com/downloads/index.html#usermenu) `http://www.oracle.com/webapps/redirect/signon?nexturl=https://www.oracle.com/downloads/index.html#usermenu`.
-> 2. The above should be done from browser via any [cookies.txt Chrome Plugin](https://chrome.google.com/webstore/search/cookies.txt) post download page license acceptance **[ here(https://www.oracle.com/technetwork/database/enterprise-edition/downloads/oracle12c-linux-12201-3608234.html)** 
+> 2. The above should be done from browser via any [cookies.txt Chrome Plugin](https://chrome.google.com/webstore/search/cookies.txt) post download page license acceptance **[ here](https://www.oracle.com/technetwork/database/enterprise-edition/downloads/oracle12c-linux-12201-3608234.html)** 
 > 3. Please put the cookie content in `{{ oracle_cookie_put_dir }}` variable mentioned directory as declared in `oracle.yml` playbook. The Cookie file in `{{ oracle_cookie_put_dir }}` defaulted as `roles/oracle/files/` should be named **cookies.txt**. 
 
 **`
