@@ -50,6 +50,8 @@ OR
 
 **As sql client directly to VM over ports `1521`**
 
+One may download SQL Developer from [Oracle](https://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html)
+
 ### Reporting bugs
 
 Please report bugs  by opening an issue in the [GitHub Issue Tracker](https://github.com/dwaiba/oracle/issues).
